@@ -1,10 +1,76 @@
 var chocolateBars = ["snicker","hundred grand","kitkat","skittles"];
-function destructivelyAddElementToBeginningOfArray() {var firstArray = [1]; firstArray.push('foo');return firstArray}
-function addElementToBeginningOfArray(){var secondArray = [1]; secondArrayplus=['foo',...secondArray];return secondArrayplus}
-function destructivelyAddElementToEndOfArray() {var fourthArray = [1]; fourthArray.unshift('foo');return fourthArray}
-function addElementToEndOfArray(){var thirdArray = [1]; thirdArrayplus=[...thirdArray,'foo'];return thirdArrayplus}
-function accessElementInArray(){var sixArray=[1,2,3]; return sixArray[2];}
-function destructivelyRemoveElementFromBeginningOfArray(){const months = [1,2,3]; months.shift; return months;}
-  function removeElementFromBeginningOfArray() {var eightArray = [1,2,3]; eightArray.slice(1); return eightArray}
-function   destructivelyRemoveElementFromEndOfArray(){var nineArray = [1,2,3];eightArray.pop; return eightArray;}
-function removeElementFromEndOfArray(){var tenArray = [1,2,3]; tenArray.slice(0,tenArray.length - 1);return tenArray}
+var array=[1];
+function
+addElementToBeginningOfArray(array,element)
+{return [element,...array]}
+
+addElementToBeginningOfArray("foo",array);
+
+var array=[1];
+function
+destructivelyAddElementToBeginningOfArray(array,element) {array.unshift(element);return array}
+
+destructivelyAddElementToBeginningOfArray(array,'foo');
+var array=[1];
+function
+addElementToEndOfArray(array, element)
+{return [...array,'foo']}
+
+const array1 = [1,2,3];
+function
+destructivelyRemoveElementFromBeginningOfArray(array)
+{array.shift(); return array}
+destructivelyRemoveElementFromBeginningOfArray(array1);
+
+var array = [1,2,3];
+function
+accessElementInArray(array, index) 
+{return array[index]}
+
+accessElementInArray(array,2);
+
+var array = [1,2,3]
+
+function
+removeElementFromBeginningOfArray(array)
+{return array.slice(1)}
+
+removeElementFromBeginningOfArray(array);
+
+var array =[1];
+function
+destructivelyAddElementToEndOfArray(array, element)
+{array.push(element);return array}
+destructivelyAddElementToEndOfArray(array, 'foo');
+
+var array2=[1,2,3];
+function
+destructivelyRemoveElementFromEndOfArray(array)
+{array.pop();return array}
+
+destructivelyRemoveElementFromEndOfArray(array2);
+
+const array3 = [1,2,3];
+function
+removeElementFromEndOfArray(array)
+{return array.slice(0,array.length -1)}
+removeElementFromEndOfArray(array3);
+
+/*
+describe('removeElementFromEndOfArray(array)', () => {
+    it('removes the last element from the array', () => {
+      expect(removeElementFromEndOfArray([1, 2, 3])).to.eql([1, 2])
+    })
+    
+    it('does not alter the original array', () => {
+      const array = [1, 2, 3];
+      removeElementFromEndOfArray(array);
+      expect(array).to.eql([1, 2, 3]);
+    })
+  })
+})
+
+*/
+
+
+ 
