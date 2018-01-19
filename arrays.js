@@ -4,8 +4,13 @@ function
 addElementToBeginningOfArray()
 {var array=[1]; var array2 =['foo',...array]; return array2}
 
+addElementToBeginningOfArray()
+
 function
 destructivelyAddElementToBeginningOfArray() {var array = [1]; return array.unshift("foo")}
+
+destructivelyAddElementToBeginningOfArray()
+
 
 /*
 function addElementToBeginningOfArray()
